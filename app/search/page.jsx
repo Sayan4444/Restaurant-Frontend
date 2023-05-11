@@ -24,7 +24,7 @@ const Search = async ({ searchParams }) => {
 };
 
 async function getRestaurantByLocation(searchParams) {
-  let url = `${process.env.url}/api/restaurant/?location_id=true&cuisine_id=true&select=name main_image price slug&location=${searchParams.city}&review_id=true`;
+  let url = `${process.env.NEXT_PUBLIC_url}/api/restaurant/?location_id=true&cuisine_id=true&select=name main_image price slug&location=${searchParams.city}&review_id=true`;
 
   if (searchParams.cuisine) {
     url = url + `&cuisine=${searchParams.cuisine}`;

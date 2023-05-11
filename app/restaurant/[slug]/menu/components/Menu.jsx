@@ -22,7 +22,7 @@ const Menu = async ({ slug }) => {
 
 async function getRestaurantMenuBySlug(slug) {
   const res = await fetch(
-    `${process.env.url}/api/restaurant/?filter[slug]=${slug}&select=name description images&item_id=true`
+    `${process.env.NEXT_PUBLIC_url}/api/restaurant/?filter[slug]=${slug}&select=name description images&item_id=true`
   );
   const data = await res.json();
   return data.data[0].item_id;

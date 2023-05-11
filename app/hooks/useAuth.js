@@ -12,7 +12,7 @@ export const useAuth = () => {
                 data: null,
                 error: null,
             })
-            const res = await fetch(`${process.env.url}/api/auth/signin`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_url}/api/auth/signin`, {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify({
@@ -23,8 +23,10 @@ export const useAuth = () => {
                 }
             });
             const data = await res.json();
-            if (data.success === false) throw new Error(data.error)
+            console.log(data);
+            if (data.success === false) throw new Error(data.error);
             const { user } = data;
+            console.log(user);
             setAuthState({
                 loading: false,
                 data: user,
@@ -47,7 +49,7 @@ export const useAuth = () => {
                 ...prev,
                 loading: true
             }))
-            const res = await fetch(`${process.env.url}/api/auth/signup`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_url}/api/auth/signup`, {
                 method: 'POST',
                 body: JSON.stringify(input),
                 headers: {
@@ -73,7 +75,7 @@ export const useAuth = () => {
 
     const singout = async () => {
         try {
-            await fetch(`${process.env.url}/api/auth/signout`, {
+            await fetch(`${process.env.NEXT_PUBLIC_url}/api/auth/signout`, {
                 method: "POST",
                 credentials: "include",
             });

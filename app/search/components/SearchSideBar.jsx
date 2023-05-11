@@ -77,12 +77,12 @@ const SearchSideBar = async ({ searchParams }) => {
 };
 
 async function getLocation() {
-  const res = await fetch(`${process.env.url}/api/location`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_url}/api/location`);
   const data = await res.json();
   return data.data;
 }
 async function getCuisine() {
-  const res = await fetch(`${process.env.url}/api/cuisine`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_url}/api/cuisine`);
   const data = await res.json();
   return data.data;
 }
