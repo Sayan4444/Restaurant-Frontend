@@ -3,9 +3,7 @@ import RestaurantCard from "./components/RestaurantCard";
 
 const Home = async () => {
   const restaurants = await getRestaurants();
-  console.log(
-    `${process.env.url}/api/restaurant/?select=name main_image cuisine_id location_id slug price&review_id=true`
-  );
+
   return (
     <main>
       <Header />

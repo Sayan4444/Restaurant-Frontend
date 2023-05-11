@@ -12,7 +12,7 @@ export const useAuth = () => {
                 data: null,
                 error: null,
             })
-            const res = await fetch("http://localhost:4000/api/auth/signin", {
+            const res = await fetch(`${process.env.url}/api/auth/signin`, {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify({
