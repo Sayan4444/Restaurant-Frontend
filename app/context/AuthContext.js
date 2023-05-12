@@ -18,7 +18,7 @@ export default function AuthContext({ children }) {
     const getUser = async () => {
         try {
             const res = await fetch(`${process.env.NEXT_PUBLIC_url}/api/auth/me`, {
-                credentials: 'include', // this is important to send and receive cookies
+                credentials: 'include',
             }, {
                 cache: 'no-cache'
             });

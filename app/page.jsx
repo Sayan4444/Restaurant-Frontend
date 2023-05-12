@@ -18,10 +18,7 @@ const Home = async () => {
 
 async function getRestaurants() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_url}/api/restaurant/?select=name main_image cuisine_id location_id slug price&review_id=true`,
-    {
-      cache: "no-cache", //TODO:Remove this cache
-    }
+    `${process.env.NEXT_PUBLIC_url}/api/restaurant/?select=name main_image cuisine_id location_id slug price&review_id=true`
   );
   const resJson = await res.json();
   const restaurants = resJson.data;
