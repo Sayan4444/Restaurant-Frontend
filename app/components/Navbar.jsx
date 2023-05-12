@@ -16,6 +16,9 @@ const Navbar = () => {
       <Link href='' className='font-bold text-gray-700 text-2xl'>
         OpenTable
       </Link>
+      <div className='text-red-400 text-xl font-bold'>
+        {data && <span>{`Hi ${data.first_name}`}</span>}
+      </div>
       <div>
         {data && !loading && (
           <button
