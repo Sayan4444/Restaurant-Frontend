@@ -23,10 +23,8 @@ export const useAuth = () => {
                 }
             });
             const data = await res.json();
-            console.log(data);
             if (data.success === false) throw new Error(data.error);
             const { user } = data;
-            console.log(user);
             setAuthState({
                 loading: false,
                 data: user,
@@ -61,7 +59,6 @@ export const useAuth = () => {
             setAuthState(prev => ({
                 ...prev,
                 loading: false,
-                data
             }))
             setShowModal(false)
         } catch (error) {
@@ -85,7 +82,7 @@ export const useAuth = () => {
                 error: null,
             });
         } catch (error) {
-
+            console.log(error.message);
         }
     }
 
